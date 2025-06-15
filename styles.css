@@ -1309,3 +1309,27 @@ h2 {
         font-size: 1.1rem;
     }
 }
+
+.ask-sol{
+    text-decoration: none;
+    color: #52f0d6;
+    font-weight: bold;
+   animation-name: company;
+   animation-duration: 4s;
+   animation-iteration-count: infinite;
+   transform: scale(1);
+     
+}
+
+@keyframes company{
+    0%{
+        transform: scale(1);
+        color: #52f0d6;
+        font-size: 7px;
+    }
+    100%{
+        transform: scale(1.5);
+        color: #127a69;
+        font-size: 12px;
+    }
+}
