@@ -774,8 +774,8 @@ h2 {
     }
 
     .navbar .logo img {
-        width: 100px;
-        height: 105px;
+        width: 150px;
+        height: 145px;
     }
 
     .nav-links {
@@ -833,8 +833,8 @@ h2 {
         justify-content: center;
         align-items: center;
         position: absolute;
-        top: 70px;
-        left: 50%;
+        top: 50px;
+        left: 65%;
         transform: translateX(-50%);
     }
 
