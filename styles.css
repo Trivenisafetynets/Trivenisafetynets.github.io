@@ -133,6 +133,7 @@ body {
     flex-direction: column;
     gap: 4px;
     cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for hamburger */
 }
 
 .hamburger span {
@@ -143,7 +144,7 @@ body {
 }
 
 .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(4px, 4px);
+    transform: rotate(45deg) translate(5px, 5px);
 }
 
 .hamburger.active span:nth-child(2) {
@@ -151,7 +152,7 @@ body {
 }
 
 .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* === Button Styles (Used in All Pages) === */
@@ -789,10 +790,11 @@ h2 {
         position: absolute;
         top: 80px;
         left: 0;
+        transition: all 0.3s ease; /* Smooth slide-in effect */
     }
 
     .nav-links.active {
-        display: flex;
+        display: flex !important; /* Ensure it stays visible when active */
     }
 
     .nav-links li {
@@ -801,29 +803,45 @@ h2 {
 
     .nav-links a {
         font-size: 0.9rem;
+        display: block; /* Ensure links take full width for better click area */
+        padding: 0.5rem 0; /* Add padding for better touch interaction */
+    }
+
+    .dropdown {
+        position: relative;
     }
 
     .dropdown-menu {
-        position: static;
+        display: none; /* Hidden by default */
+        position: static; /* Stack naturally in the flow */
         box-shadow: none;
-        background-color: transparent;
-        padding: 0.5rem 0;
+        background-color: #222831; /* Slightly lighter than header-bg for contrast */
+        padding: 0.5rem 1rem 0.5rem 2rem; /* Indent the dropdown */
+        z-index: 1002; /* Ensure it appears above other elements */
+        text-align: left; /* Align text to the left for better readability */
+        width: 100%; /* Ensure it takes full width */
+        overflow-y: auto; /* Allow scrolling if too many items */
     }
 
+    /* Explicitly disable hover on mobile */
     .dropdown:hover .dropdown-menu {
         display: none;
     }
 
+    /* Show dropdown menu when .dropdown has .active class */
     .dropdown.active .dropdown-menu {
-        display: block;
+        display: block !important;
     }
 
     .dropdown-menu li {
-        padding: 0.3rem 0;
+        padding: 0.4rem 0; /* Increased padding for better spacing */
+        margin: 0; /* Remove any margins that might cause clipping */
     }
 
     .dropdown-menu a {
         font-size: 0.8rem;
+        padding: 0.3rem 0; /* Add padding for touch */
+        display: block; /* Ensure links take full width */
     }
 
     .contact-info {
@@ -1108,8 +1126,6 @@ h2 {
     }
 
     /* Animations for Mobile Scrolling */
-    /* Removed opacity: 0 to ensure elements are visible by default */
-    /* Animations will still apply when .animate-on-scroll is added */
     .hero.animate-on-scroll, .services.animate-on-scroll, .why-choose.animate-on-scroll, .image-loop.animate-on-scroll, .gallery.animate-on-scroll, .feedback.animate-on-scroll, .locations.animate-on-scroll, .milestone.animate-on-scroll, .service-page.animate-on-scroll, .about-page.animate-on-scroll, .contact-page.animate-on-scroll, .gallery-page.animate-on-scroll {
         animation: fadeInUp 0.6s ease forwards;
     }
@@ -1310,24 +1326,23 @@ h2 {
     }
 }
 
-.ask-sol{
+.ask-sol {
     text-decoration: none;
     color: #52f0d6;
     font-weight: bold;
-   animation-name: company;
-   animation-duration: 4s;
-   animation-iteration-count: infinite;
-   transform: scale(1);
-     
+    animation-name: company;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    transform: scale(1);
 }
 
-@keyframes company{
-    0%{
+@keyframes company {
+    0% {
         transform: scale(1);
         color: #52f0d6;
         font-size: 7px;
     }
-    100%{
+    100% {
         transform: scale(1.5);
         color: #127a69;
         font-size: 12px;
